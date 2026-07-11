@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VIME — Interactive model charts for Google Slides</title>
+<meta name="description" content="VIME turns a Google Sheets model into interactive, presentation-ready charts inside Google Slides. Adjust inputs with sliders, press Calculate, and drop live charts onto your slide.">
+<style>
+  :root{
+    --ink:#1f2937; --muted:#5f6368; --line:#e5e7eb;
+    --accent:#2563eb; --accent-dark:#1d4ed8; --bg:#ffffff; --soft:#f7f8fa;
+    --maxw:900px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{font-family:'Inter',-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.6;background:var(--bg)}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;gap:14px;padding:16px 0}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:18px}
+  .logo{width:28px;height:28px;border-radius:6px;background:var(--accent);display:inline-flex;align-items:center;justify-content:center}
+  .logo svg{display:block}
+  .nav .spacer{flex:1}
+  .nav a{color:var(--muted);font-size:14px}
+  .hero{padding:64px 0 40px;text-align:center}
+  .hero h1{font-size:38px;line-height:1.15;margin:0 0 14px;letter-spacing:-0.5px}
+  .hero p{font-size:19px;color:var(--muted);max-width:640px;margin:0 auto 26px}
+  .cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 22px;border-radius:8px;font-weight:600;font-size:15px}
+  .cta:hover{background:var(--accent-dark);text-decoration:none}
+  .cta.secondary{background:#fff;color:var(--accent);border:1px solid var(--accent);margin-left:8px}
+  section{padding:44px 0;border-top:1px solid var(--line)}
+  h2{font-size:24px;margin:0 0 20px;letter-spacing:-0.3px}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .step{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:20px}
+  .step .n{width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;margin-bottom:12px}
+  .step h3{margin:0 0 6px;font-size:16px}
+  .step p{margin:0;color:var(--muted);font-size:14px}
+  .features{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .feature h3{margin:0 0 4px;font-size:16px}
+  .feature p{margin:0;color:var(--muted);font-size:14px}
+  .privacy-note{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:20px}
+  .privacy-note p{margin:0;color:var(--muted);font-size:14px}
+  footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px}
+  footer a{color:var(--muted)}
+  .foot-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+  .foot-row .spacer{flex:1}
+  @media(max-width:680px){.steps,.features{grid-template-columns:1fr}.hero h1{font-size:30px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <span class="brand">
+      <span class="logo" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 16 16"><rect x="1" y="8" width="3" height="6" rx="1" fill="#fff"/><rect x="6.5" y="4" width="3" height="10" rx="1" fill="#fff" opacity="0.9"/><rect x="12" y="1.5" width="3" height="12.5" rx="1" fill="#fff" opacity="0.8"/></svg>
+      </span>
+      VIME
+    </span>
+    <span class="spacer"></span>
+    <a href="#how">How it works</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="mailto:cosmin@pitigoi.com">Support</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="hero">
+      <h1>Your spreadsheet model, live inside Slides.</h1>
+      <p>VIME connects a Google Sheets model to your presentation. Move sliders to change assumptions, press Calculate, and watch presentation-quality charts update — then drop a snapshot straight onto your slide.</p>
+      <a class="cta" href="mailto:cosmin@pitigoi.com?subject=VIME%20access">Request access</a>
+      <a class="cta secondary" href="#how">See how it works</a>
+    </div>
+  </div>
+
+  <section id="how">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="n">1</div>
+          <h3>Connect your Sheet</h3>
+          <p>Pick the Google Sheet that holds your model. VIME is granted access to only that one file you choose — nothing else in your Drive.</p>
+        </div>
+        <div class="step">
+          <div class="n">2</div>
+          <h3>Adjust &amp; Calculate</h3>
+          <p>Set which cells are inputs (sliders or fields) and which are outputs. Change assumptions in the sidebar and press Calculate to run your model.</p>
+        </div>
+        <div class="step">
+          <div class="n">3</div>
+          <h3>Chart it on your slide</h3>
+          <p>Outputs render as clean, multi-year charts. Press Update Slide to place a crisp snapshot into your deck, styled to match your presentation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>What you get</h2>
+      <div class="features">
+        <div class="feature">
+          <h3>Multi-year, multi-series charts</h3>
+          <p>Bar, line, pie, and single-value views built from cell ranges — not just one number. Clean, executive-ready styling out of the box.</p>
+        </div>
+        <div class="feature">
+          <h3>What-if without leaving Slides</h3>
+          <p>Explore scenarios live during a meeting. No tab-switching to the spreadsheet, no rebuilding charts by hand.</p>
+        </div>
+        <div class="feature">
+          <h3>Pick a range by clicking</h3>
+          <p>Select input cells and output ranges by drag-selecting them from a live preview of your Sheet — no typing A1 notation.</p>
+        </div>
+        <div class="feature">
+          <h3>Your model stays yours</h3>
+          <p>VIME reads and writes only the Sheet you connect. Nothing is stored on outside servers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Privacy in one paragraph</h2>
+      <div class="privacy-note">
+        <p>VIME accesses only the single Google Sheet you explicitly connect (via Google's file picker) and the presentation you have open. Your setup — which cells are inputs and outputs, chart types, and layout — is stored inside your presentation using Google's built-in add-on storage. VIME does not run its own servers and does not send your data to third parties. See the <a href="privacy.html">full privacy policy</a>.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <span>© <span id="yr"></span> VIME</span>
+    <span class="spacer"></span>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="mailto:cosmin@pitigoi.com">cosmin@pitigoi.com</a>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
