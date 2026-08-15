@@ -5,10 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>VIME — Interactive model charts for Google Slides</title>
 <meta name="description" content="VIME turns a Google Sheets model into interactive, presentation-ready charts inside Google Slides. Adjust inputs with sliders, press Calculate, and drop live charts onto your slide.">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="icon-32.png">
 <style>
   :root{
     --ink:#1f2937; --muted:#5f6368; --line:#e5e7eb;
-    --accent:#2563eb; --accent-dark:#1d4ed8; --bg:#ffffff; --soft:#f7f8fa;
+    /* Brand colourway (from the VIME mark) */
+    --brand-yellow:#FAC80E; --brand-green:#4ABE73; --brand-teal:#71CCD6;
+    /* Deepened green for interactive text/buttons — 5.3:1 on white (WCAG AA) */
+    --accent:#0E7C45; --accent-dark:#0A5F35; --accent-soft:#EAF6EF;
+    --brand-gradient:linear-gradient(90deg,var(--brand-yellow) 0%,var(--brand-green) 55%,var(--brand-teal) 100%);
+    --bg:#ffffff; --soft:#f7f8fa;
     --maxw:900px;
   }
   *{box-sizing:border-box}
@@ -17,11 +24,11 @@
   a{color:var(--accent);text-decoration:none}
   a:hover{text-decoration:underline}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  .brandbar{height:4px;background:var(--brand-gradient)}
   header{border-bottom:1px solid var(--line)}
   .nav{display:flex;align-items:center;gap:14px;padding:16px 0}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:18px}
-  .logo{width:28px;height:28px;border-radius:6px;background:var(--accent);display:inline-flex;align-items:center;justify-content:center}
-  .logo svg{display:block}
+  .brand{display:flex;align-items:center}
+  .brand img{display:block;height:26px;width:auto}
   .nav .spacer{flex:1}
   .nav a{color:var(--muted);font-size:14px}
   .hero{padding:64px 0 40px;text-align:center}
@@ -34,6 +41,8 @@
   h2{font-size:24px;margin:0 0 20px;letter-spacing:-0.3px}
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   .step{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:20px}
+  .step{position:relative;overflow:hidden}
+  .step::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--brand-gradient)}
   .step .n{width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;margin-bottom:12px}
   .step h3{margin:0 0 6px;font-size:16px}
   .step p{margin:0;color:var(--muted);font-size:14px}
@@ -50,14 +59,12 @@
 </style>
 </head>
 <body>
+<div class="brandbar"></div>
 <header>
   <div class="wrap nav">
-    <span class="brand">
-      <span class="logo" aria-hidden="true">
-        <svg width="16" height="16" viewBox="0 0 16 16"><rect x="1" y="8" width="3" height="6" rx="1" fill="#fff"/><rect x="6.5" y="4" width="3" height="10" rx="1" fill="#fff" opacity="0.9"/><rect x="12" y="1.5" width="3" height="12.5" rx="1" fill="#fff" opacity="0.8"/></svg>
-      </span>
-      VIME
-    </span>
+    <a class="brand" href="index.html" aria-label="VIME home">
+      <img src="vime-lockup.svg" alt="VIME">
+    </a>
     <span class="spacer"></span>
     <a href="#how">How it works</a>
     <a href="privacy.html">Privacy</a>
