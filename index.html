@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VIME — Interactive model charts for Google Slides</title>
-<meta name="description" content="VIME turns a Google Sheets model into interactive, presentation-ready charts inside Google Slides. Adjust inputs with sliders, press Calculate, and drop live charts onto your slide.">
+<title>VIME — the Visual Interactive Model Engine for Google Slides</title>
+<meta name="description" content="VIME — the Visual Interactive Model Engine — turns a Google Sheets model into interactive, presentation-ready charts inside Google Slides. Adjust inputs with sliders, press Calculate, and drop live charts onto your slide.">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="alternate icon" href="icon-32.png">
 <style>
@@ -28,15 +28,29 @@
   header{border-bottom:1px solid var(--line)}
   .nav{display:flex;align-items:center;gap:14px;padding:16px 0}
   .brand{display:flex;align-items:center}
-  .brand img{display:block;height:26px;width:auto}
+  .brand img{display:block;height:28px;width:auto}
   .nav .spacer{flex:1}
   .nav a{color:var(--muted);font-size:14px}
-  .hero{padding:64px 0 40px;text-align:center}
-  .hero h1{font-size:38px;line-height:1.15;margin:0 0 14px;letter-spacing:-0.5px}
-  .hero p{font-size:19px;color:var(--muted);max-width:640px;margin:0 auto 26px}
-  .cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 22px;border-radius:8px;font-weight:600;font-size:15px}
-  .cta:hover{background:var(--accent-dark);text-decoration:none}
-  .cta.secondary{background:#fff;color:var(--accent);border:1px solid var(--accent);margin-left:8px}
+  /* ---- Hero ---- */
+  .herowrap{position:relative;overflow:hidden;background:linear-gradient(180deg,#f4faf6 0%,#ffffff 78%)}
+  .herowrap::before{content:"";position:absolute;top:-340px;left:50%;transform:translateX(-50%);
+    width:1000px;height:600px;border-radius:50%;pointer-events:none;
+    background:radial-gradient(closest-side,rgba(74,190,115,.11),rgba(113,204,214,.08) 50%,transparent 72%)}
+  .hero{position:relative;padding:66px 0 8px;text-align:center}
+  .kicker{font-size:12px;font-weight:700;letter-spacing:2.6px;text-transform:uppercase;
+    color:var(--accent);margin:0 0 14px}
+  .hero h1{font-size:48px;line-height:1.1;margin:0 0 16px;letter-spacing:-1.2px}
+  .hero p{font-size:19px;color:var(--muted);max-width:660px;margin:0 auto 28px}
+  .cta{display:inline-block;background:var(--accent);color:#fff;padding:13px 26px;border-radius:8px;font-weight:600;font-size:15px;
+    box-shadow:0 6px 18px rgba(14,124,69,.22);transition:transform .12s ease,box-shadow .12s ease,background .12s ease}
+  .cta:hover{background:var(--accent-dark);text-decoration:none;transform:translateY(-1px);box-shadow:0 10px 24px rgba(14,124,69,.28)}
+  .cta.secondary{background:#fff;color:var(--accent);border:1px solid var(--accent);margin-left:8px;box-shadow:0 4px 12px rgba(31,41,55,.06)}
+  .cta.secondary:hover{background:var(--accent-soft);color:var(--accent-dark)}
+  .shotframe{position:relative;margin:44px auto 0;max-width:1000px;padding:0 20px}
+  .shotframe img{display:block;width:100%;height:auto;border:1px solid var(--line);border-top:3px solid transparent;
+    border-radius:14px 14px 0 0;box-shadow:0 24px 60px rgba(31,41,55,.16);background:#fff}
+  .shotframe .edge{position:absolute;top:0;left:20px;right:20px;height:4px;border-radius:14px 14px 0 0;background:var(--brand-gradient);z-index:1}
+  .shotcap{text-align:center;font-size:13px;color:var(--muted);margin:14px 0 0}
   section{padding:44px 0;border-top:1px solid var(--line)}
   h2{font-size:24px;margin:0 0 20px;letter-spacing:-0.3px}
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -55,7 +69,16 @@
   footer a{color:var(--muted)}
   .foot-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
   .foot-row .spacer{flex:1}
-  @media(max-width:680px){.steps,.features{grid-template-columns:1fr}.hero h1{font-size:30px}}
+  @media(max-width:680px){
+    .steps,.features{grid-template-columns:1fr}
+    .hero{padding:48px 0 8px}
+    .hero h1{font-size:31px;letter-spacing:-0.6px}
+    .hero p{font-size:17px}
+    .kicker{font-size:11px;letter-spacing:1.8px}
+    .cta{display:block;text-align:center}
+    .cta.secondary{margin-left:0;margin-top:10px}
+    .nav a{font-size:13px}
+  }
 </style>
 </head>
 <body>
@@ -74,12 +97,19 @@
 </header>
 
 <main>
-  <div class="wrap">
-    <div class="hero">
-      <h1>Your spreadsheet model, live inside Slides.</h1>
-      <p>VIME connects a Google Sheets model to your presentation. Move sliders to change assumptions, press Calculate, and watch presentation-quality charts update — then drop a snapshot straight onto your slide.</p>
-      <a class="cta" href="mailto:cosmin@pitigoi.com?subject=VIME%20access">Request access</a>
-      <a class="cta secondary" href="#how">See how it works</a>
+  <div class="herowrap">
+    <div class="wrap">
+      <div class="hero">
+        <div class="kicker">Visual Interactive Model Engine</div>
+        <h1>Your spreadsheet model, live inside Slides.</h1>
+        <p>VIME connects a Google Sheets model to your presentation. Move sliders to change assumptions, press Calculate, and watch presentation-quality charts update — then drop a snapshot straight onto your slide.</p>
+        <a class="cta" href="mailto:cosmin@pitigoi.com?subject=VIME%20access">Request access</a>
+        <a class="cta secondary" href="#how">See how it works</a>
+      </div>
+    </div>
+    <div class="shotframe">
+      <span class="edge"></span>
+      <img src="hero-shot.png" alt="VIME sidebar open in Google Slides, showing sliders and live charts next to a slide" width="1600" height="730" loading="eager">
     </div>
   </div>
 
@@ -142,7 +172,7 @@
 
 <footer>
   <div class="wrap foot-row">
-    <span>© <span id="yr"></span> VIME</span>
+    <span>© <span id="yr"></span> VIME — Visual Interactive Model Engine</span>
     <span class="spacer"></span>
     <a href="privacy.html">Privacy Policy</a>
     <a href="terms.html">Terms of Service</a>
