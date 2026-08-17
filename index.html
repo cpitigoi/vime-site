@@ -51,6 +51,13 @@
     border-radius:14px 14px 0 0;box-shadow:0 24px 60px rgba(31,41,55,.16);background:#fff}
   .shotframe .edge{position:absolute;top:0;left:20px;right:20px;height:4px;border-radius:14px 14px 0 0;background:var(--brand-gradient);z-index:1}
   .shotcap{text-align:center;font-size:13px;color:var(--muted);margin:14px 0 0}
+  .videowrap{max-width:1000px;margin:0 auto;padding:0 20px}
+  .videoframe{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);
+    box-shadow:0 20px 50px rgba(31,41,55,.16);background:#fff;line-height:0}
+  .videoframe::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;
+    background:var(--brand-gradient);z-index:2}
+  .videoframe video{width:100%;height:auto;display:block}
+  .videonote{text-align:center;font-size:13px;color:var(--muted);margin:14px 0 0}
   section{padding:44px 0;border-top:1px solid var(--line)}
   h2{font-size:24px;margin:0 0 20px;letter-spacing:-0.3px}
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -89,6 +96,7 @@
       <img src="vime-lockup.svg" alt="VIME">
     </a>
     <span class="spacer"></span>
+    <a href="#demo">Watch the demo</a>
     <a href="#how">How it works</a>
     <a href="privacy.html">Privacy</a>
     <a href="terms.html">Terms</a>
@@ -112,6 +120,23 @@
       <img src="hero-shot.png" alt="VIME sidebar open in Google Slides, showing sliders and live charts next to a slide" width="1600" height="730" loading="eager">
     </div>
   </div>
+
+  <section id="demo">
+    <div class="wrap">
+      <h2>See it in 75 seconds</h2>
+    </div>
+    <div class="videowrap">
+      <div class="videoframe">
+        <video controls preload="metadata" playsinline
+               poster="vime-demo-poster.jpg"
+               aria-label="VIME product demo: connecting a Google Sheet, building charts, and running a live what-if inside Google Slides">
+          <source src="vime-demo.mp4" type="video/mp4">
+          Your browser can't play this video. <a href="vime-demo.mp4">Download it instead</a>.
+        </video>
+      </div>
+      <p class="videonote">Setting up a discounted-cash-flow model, then changing an assumption live — no spreadsheet, no rebuilding.</p>
+    </div>
+  </section>
 
   <section id="how">
     <div class="wrap">
