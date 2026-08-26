@@ -45,7 +45,7 @@
 
 <main class="wrap">
   <h1>Privacy Policy</h1>
-  <p class="eff">Effective date: July 10, 2026</p>
+  <p class="eff">Effective date: August 25, 2026</p>
 
   <p>VIME is a Google Workspace™ add-on for Google Slides™ that connects a Google Sheets™ model to your presentation and renders interactive charts. This policy explains what information VIME accesses, how it is used, and how it is stored. It applies to the VIME add-on ("VIME", "we").</p>
 
@@ -58,13 +58,37 @@
   </ul>
 
   <h2>How VIME uses this information</h2>
-  <p>The information is used solely to provide the add-on's features to you: running your model, drawing charts in the sidebar, and placing a chart image onto your slide. VIME does not use your content for advertising, and does not sell or share it.</p>
+  <p>The information is used solely to provide the add-on's features to you: running your model, drawing charts in the sidebar, and placing a chart image onto your slide. VIME does not use your content for advertising, and does not sell or share it — see <em>Sharing, transfer, and disclosure of Google user data</em> below.</p>
+
+  <h2>Sharing, transfer, and disclosure of Google user data</h2>
+  <p><strong>VIME does not share, transfer, or disclose your Google user data to any third party.</strong> We do not transfer or disclose your information to third parties for purposes other than the ones provided in this policy.</p>
+  <ul>
+    <li><strong>No third-party recipients.</strong> There are no advertisers, analytics vendors, data brokers, marketing partners, hosting providers, or subprocessors that receive your Google user data. There is no category of third party with whom this data is shared.</li>
+    <li><strong>No transfer to VIME.</strong> VIME operates no servers, databases, or backends of its own. Your spreadsheet values, presentation content, and configuration never leave Google's infrastructure, and are never received by VIME or its developer.</li>
+    <li><strong>No sale of data.</strong> VIME does not sell, rent, or licence Google user data to anyone, under any circumstances.</li>
+    <li><strong>No use for AI or machine learning.</strong> VIME does not use Google Workspace™ data obtained through Google APIs to develop, improve, or train generalized or non-personalized artificial intelligence or machine learning models.</li>
+    <li><strong>No human access.</strong> No VIME developer, employee, or contractor reads your Google user data. It is processed only by the add-on's code, running in your own browser and in your own Google Apps Script execution context.</li>
+    <li><strong>Legal requests.</strong> Because VIME holds no copy of your data, it has nothing to produce in response to a subpoena, court order, or government request. Any such request would have to be directed to Google as the custodian of the data.</li>
+    <li><strong>Change of control.</strong> If VIME were ever sold, merged, or transferred, no Google user data would move with it, because none is held. Any change to this policy would be posted here before taking effect.</li>
+  </ul>
 
   <h2>What VIME stores, and where</h2>
   <ul>
     <li><strong>Your setup</strong> — which Sheet is connected, which cells are inputs and outputs, chart types, and layout — is stored using Google's built-in add-on storage (Properties Service) inside your presentation and your Google account. This is what lets your configuration reload the next time you open the deck.</li>
     <li>VIME does <strong>not</strong> operate its own servers or database, and does <strong>not</strong> transmit your spreadsheet data, cell values, or presentation content to any VIME-controlled system or third party.</li>
     <li>Because the connected Sheet's identifier is stored within the presentation, anyone you share the presentation with (as an editor) may be able to see which Sheet is connected.</li>
+  </ul>
+
+  <h2>How VIME protects your data</h2>
+  <p>Security procedures are in place to protect the confidentiality and integrity of your data, including data that may be sensitive, such as the contents of a financial model. Because VIME keeps no copy of your data outside Google's own infrastructure, the protections below apply to it where it lives.</p>
+  <ul>
+    <li><strong>Encryption in transit.</strong> We use encryption to protect your information. All communication between the add-on, Google Sheets™, and Google Slides™ takes place over HTTPS/TLS. VIME is served exclusively over TLS by Google Apps Script and makes no unencrypted connections; <a href="https://usevime.com">usevime.com</a> is served over HTTPS.</li>
+    <li><strong>Encryption at rest.</strong> Your spreadsheet, your presentation, and VIME's stored configuration all reside in Google Drive™ and Google's Properties Service, where Google encrypts them at rest.</li>
+    <li><strong>Least-privilege access.</strong> VIME requests the narrowest scopes that let it function. The <code>drive.file</code> scope grants access only to the single spreadsheet you pick with Google's file picker, and <code>presentations.currentonly</code> only to the presentation you have open. VIME cannot list, read, or modify any other file in your Google Drive™.</li>
+    <li><strong>Access control and authentication.</strong> Your data is readable only by you and by those you have already granted access to those Google files. Access is bounded by your own Google account sign-in, including any two-step verification or administrator controls your organisation enforces. VIME never sees or stores your Google password; authentication is handled entirely by Google's OAuth 2.0 consent flow, and you can revoke VIME's authorisation at any time from your Google Account permissions page.</li>
+    <li><strong>Isolation between users.</strong> Configuration is written to a per-user, per-document store, so one user's stored settings are not reachable by another user.</li>
+    <li><strong>Data minimisation.</strong> VIME retains nothing beyond your configuration, and only for as long as the add-on remains installed. See <em>Data retention and removal</em> below.</li>
+    <li><strong>Incident response.</strong> Suspected vulnerabilities or incidents can be reported to <a href="mailto:vime.extension@gmail.com">vime.extension@gmail.com</a>. Any incident affecting user data would be investigated on receipt and disclosed on this page and by email to affected users.</li>
   </ul>
 
   <h2>Third-party services</h2>
