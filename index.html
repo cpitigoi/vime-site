@@ -54,6 +54,15 @@
     border-radius:14px 14px 0 0;box-shadow:0 24px 60px rgba(31,41,55,.16);background:#fff}
   .shotframe .edge{position:absolute;top:0;left:20px;right:20px;height:4px;border-radius:14px 14px 0 0;background:var(--brand-gradient);z-index:1}
   .shotcap{text-align:center;font-size:13px;color:var(--muted);margin:14px 0 0}
+  .ctanote{font-size:13.5px;color:var(--muted);margin:16px auto 0}
+  .navcta{background:var(--accent);color:#fff !important;padding:7px 15px;border-radius:7px;
+          font-weight:600;font-size:14px;margin-left:6px}
+  .navcta:hover{background:var(--accent-dark);text-decoration:none}
+  .closing{background:var(--accent-soft);border-top:1px solid rgba(14,124,69,.14);
+           padding:56px 0 60px;margin-top:8px}
+  .closing h2{margin-bottom:10px}
+  .closing-sub{color:var(--muted);font-size:17px;margin:0 auto 24px;max-width:520px}
+
   /* The demo video takes the hero's media slot. The file already carries its own
      white margins, gradient rule and inner shadow, so it needs a frame that defines
      its edges against a white page without repeating any of that. */
@@ -105,7 +114,14 @@
     .kicker{font-size:11px;letter-spacing:1.8px}
     .cta{display:block;text-align:center}
     .cta.secondary{margin-left:0;margin-top:10px}
-    .nav a{font-size:13px}
+    /* At phone width the nav has no room for five links plus a button.
+       Drop the secondary links and keep Install — the one action that
+       matters — and stop "How it works" wrapping to three lines. */
+    .nav{gap:10px}
+    .nav a{font-size:13px;white-space:nowrap}
+    .nav a[href="#how"],
+    .nav a[href="terms.html"]{display:none}
+    .navcta{padding:7px 13px;font-size:13px;margin-left:0}
   }
 </style>
 </head>
@@ -117,11 +133,11 @@
       <img src="vime-lockup.svg" alt="VIME">
     </a>
     <span class="spacer"></span>
-    <a href="#demo">Watch the demo</a>
     <a href="#how">How it works</a>
     <a href="privacy.html">Privacy</a>
     <a href="terms.html">Terms</a>
     <a href="mailto:vime.extension@gmail.com">Support</a>
+    <a class="navcta" href="https://workspace.google.com/marketplace/app/vime/1089720071836" target="_blank" rel="noopener">Install</a>
   </div>
 </header>
 
@@ -133,7 +149,9 @@
         <h1>Your spreadsheet model, live inside Google Slides™.</h1>
         <p>Connect a Google Sheets™ file, turn its assumptions into sliders, and watch the charts on your slide redraw as you move them.</p>
         <p class="herotag">Change the assumptions. Not the deck.</p>
-        <a class="cta" href="#demo">Watch the demo</a>
+        <a class="cta" href="https://workspace.google.com/marketplace/app/vime/1089720071836" target="_blank" rel="noopener">Install from the Google Workspace&trade; Marketplace</a>
+        <a class="cta secondary" href="#demo">Watch the demo</a>
+        <p class="ctanote">Free &middot; installs into Google Slides&trade; in about a minute</p>
       </div>
     </div>
     <div class="shotframe" id="demo">
@@ -209,6 +227,14 @@
       <div class="privacy-note">
         <p>VIME accesses only the single Google Sheets™ file you explicitly connect (through the Google Drive™ file picker) and the presentation you have open. Your setup — which cells are inputs and outputs, chart types, and layout — is stored inside your presentation using built-in Google Workspace™ add-on storage. VIME does not run its own servers and does not send your data to third parties. See the <a href="privacy.html">full privacy policy</a>.</p>
       </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap" style="text-align:center">
+      <h2>Put your model in your deck.</h2>
+      <p class="closing-sub">Free to install. Works with any Google Sheets&trade; file you already have.</p>
+      <a class="cta" href="https://workspace.google.com/marketplace/app/vime/1089720071836" target="_blank" rel="noopener">Install from the Google Workspace&trade; Marketplace</a>
     </div>
   </section>
 </main>
