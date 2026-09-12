@@ -3,6 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TWHG2VNF7D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TWHG2VNF7D');
+</script>
+
 <title>VIME — the Visual Interactive Model Engine for Google Slides™</title>
 <meta name="description" content="VIME — the Visual Interactive Model Engine — turns a Google Sheets™ model into interactive, presentation-ready charts inside Google Slides™. Adjust inputs with sliders, press Calculate, and drop live charts onto your slide.">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
@@ -273,6 +282,22 @@ document.getElementById('yr').textContent=new Date().getFullYear();
     v.play();
   });
   v.addEventListener('ended',function(){ v.setAttribute('controls',''); });
+})();
+</script>
+<script>
+/* Count clicks on the Install buttons, so site visits can be compared with
+   people who actually went through to the Marketplace listing. */
+(function(){
+  var links = document.querySelectorAll('a[href*="workspace.google.com/marketplace/app/vime"]');
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function(){
+      if (typeof gtag === 'function') {
+        gtag('event', 'install_click', {
+          link_location: this.className || 'link'
+        });
+      }
+    });
+  }
 })();
 </script>
 </body>
